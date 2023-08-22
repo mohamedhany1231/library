@@ -10,7 +10,7 @@
   <body>
     <button type="button" class="new-book">Add Book</button>
     <div class="book-form">
-      <form action="">
+      <form action="" id="form">
         <div class="input">
           <label for="title">title</label>
           <input type="text" id="title" />
@@ -21,13 +21,16 @@
         </div>
         <div class="input">
           <label for="pages">pages</label>
-          <input type="number" id="pages" />
+          <input type="number" id="pages" min="0" />
         </div>
         <div class="input">
           <label for="done-reading">done-reading</label>
           <input type="checkbox" id="done-reading" />
         </div>
-        <button type="submit">Submit</button>
+        <div class="input">
+          <p></p>
+          <button type="submit">Submit</button>
+        </div>
       </form>
     </div>
     <div id="booksShelf"></div>
