@@ -1,0 +1,90 @@
+button.new-book {
+  margin: auto;
+  padding: 10px 40px;
+  background-color: black;
+  color: white;
+  font-size: 1.4em;
+  font-weight: bold;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 40px;
+}
+.book-form {
+  display: none;
+  background-color: #00000085;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50vh;
+  width: 80%;
+  color: white;
+  font-weight: bold;
+  font-size: 2.5em;
+  padding: 20% 5%;
+}
+.book-form form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.book-form .input {
+  /* flex: 1; */
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+.book-form .input input {
+  height: 25px;
+  border-radius: 12px;
+  outline: none;
+  border: 2px solid rgb(20, 221, 20);
+  font-size: 1.5rem;
+  text-align: center;
+}
+.book-form .input input[type="number"] {
+  width: 8%;
+  margin: auto;
+}
+.book-form form button {
+  margin: auto;
+  padding: 10px 40px;
+  background-color: rgb(20, 221, 20);
+  color: white;
+  font-size: 1.4em;
+  font-weight: bold;
+  border-radius: 50px;
+  display: block;
+  margin-bottom: 40px;
+}
+#booksShelf {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1%;
+}
+.book {
+  padding: 10px 20px;
+  text-align: center;
+  border: 3px solid black;
+  border-radius: 12px;
+}
+.book img {
+  width: 100%;
+}
+.book .title {
+  margin-bottom: 0;
+}
+.book .author {
+  margin-top: 0;
+  font-size: 0.8em;
+  color: gray;
+}
+.book .pages {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
+}
+.book .status {
+  margin-top: 0;
+  color: gray;
+}

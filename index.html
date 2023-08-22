@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button type="button" class="new-book">Add Book</button>
+    <div class="book-form">
+      <form action="">
+        <div class="input">
+          <label for="title">title</label>
+          <input type="text" id="title" />
+        </div>
+        <div class="input">
+          <label for="author">author</label>
+          <input type="text" id="author" />
+        </div>
+        <div class="input">
+          <label for="pages">pages</label>
+          <input type="number" id="pages" />
+        </div>
+        <div class="input">
+          <label for="done-reading">done-reading</label>
+          <input type="checkbox" id="done-reading" />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div id="booksShelf"></div>
+  </body>
+</html>
