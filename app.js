@@ -104,11 +104,32 @@ myLibrary.forEach((book) => {
   createBookDiv(book);
 });
 
-// form
+// form(
+// form check
 let addBook = document.querySelector(".new-book");
 let bookForm = document.querySelector("form#form");
 let formDiv = document.querySelector(".book-form");
+let title = bookForm.querySelector("#title");
+let author = bookForm.querySelector("#author");
+let pages = bookForm.querySelector("#pages");
+let submitBtn = bookForm.querySelector("button");
 
+function checkInput(input, errorMessage) {
+  if (input.validity.valueMissing) {
+    input.setCustomValidity(errorMessage);
+  } else {
+    input.setCustomValidity("");
+  }
+}
+function formCheck() {
+  checkInput(title, "book must have a title!");
+  checkInput(author, "book must have an author!");
+  checkInput(pages, "book must have pages  number!");
+}
+submitBtn.addEventListener("click", formCheck);
+title.addEventListener("input", formCheck);
+author.addEventListener("input", formCheck);
+pages.addEventListener("input", formCheck);
 addBook.addEventListener("click", () => {
   formDiv.style.display =
     formDiv.style.display == "inline-block" ? "none" : "inline-block";
@@ -123,11 +144,14 @@ formDiv.addEventListener("click", hideForm);
 
 bookForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  let title = bookForm.querySelector("#title").value;
-  let author = bookForm.querySelector("#author").value;
-  let pages = bookForm.querySelector("#pages").value;
-  let doneReading = bookForm.querySelector("#done-reading").checked;
-  let newBook = new Book(title, author, pages, doneReading);
+
+  let doneReading = bookForm.querySelector("#done-reading");
+  let newBook = new Book(
+    title.value,
+    author.value,
+    pages.value,
+    doneReading.checked
+  );
   myLibrary.push(newBook);
   hideForm();
   createBookDiv(newBook);
